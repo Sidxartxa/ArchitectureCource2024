@@ -1,0 +1,45 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+[RequireComponent(typeof(Animator))]
+public class CharacterView : MonoBehaviour
+{
+
+    private const string IsRunning = "IsRunning";
+    private const string IsIdling = "IsIdling";
+    private const string IsJumping = "IsJumping";
+    private const string IsFalling = "IsFalling";
+    private const string IsMovement = "IsMovement";
+    private const string IsGrounded = "IsGrounded";
+    private const string IsAirbone = "IsAirborn";
+
+
+ 
+    private Animator _animator;
+
+    public void Initialize() => _animator = GetComponent<Animator>();
+     
+    public void StartIdling() => _animator.SetBool(IsIdling, true);
+    public void StopIdling() => _animator.SetBool(IsIdling, false);
+
+    public void StartRunning() => _animator.SetBool(IsRunning, true);
+    public void StopRunning() => _animator.SetBool(IsRunning, false);
+
+    public void StartJumping() => _animator.SetBool(IsJumping, true);
+    public void StopJumping() => _animator.SetBool(IsJumping, false);
+
+    public void StartFalling() => _animator.SetBool(IsFalling, true);
+    public void StopFalling() =>_animator.SetBool(IsFalling, false);
+
+    public void StartGrounded() => _animator.SetBool(IsGrounded, true);
+    public void StopGrounded() => _animator.SetBool(IsGrounded, false);
+
+    public void StartAirbone() => _animator.SetBool(IsAirbone, true);
+    public void StopAirbone() => _animator.SetBool(IsAirbone, false);
+
+    public void StartMovement() => _animator.SetBool(IsMovement, true);
+    public void StopMovement() => _animator.SetBool(IsMovement, false);
+
+
+
+}
